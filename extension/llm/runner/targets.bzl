@@ -37,11 +37,13 @@ def define_common_targets():
             exported_headers = [
                 "model_metadata.h",
                 "stats.h",
+                "text_stream.h",
                 "util.h",
             ],
             visibility = ["PUBLIC"],
             exported_deps = [
                 ":constants",
+                "//pytorch/tokenizers:headers",
                  "//executorch/extension/module:module" + aten_suffix,
                  "//executorch/extension/tensor:tensor" + aten_suffix,
             ],
